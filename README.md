@@ -1,12 +1,12 @@
-# Zinvolt P1 Meter – Home Assistant Integration
+# Zinvolt P1-dongle Pro – Home Assistant Integration
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 
-Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zinvolt P1 Meter**, providing real-time energy monitoring over your local network.
+Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zinvolt P1-dongle Pro**, providing real-time energy monitoring over your local network.
 
 ## Features
 
-- **Local polling** – communicates directly with the meter on your LAN; no cloud dependency.
+- **Local push / polling** – opens a persistent WebSocket connection for real-time push updates when the meter supports it; automatically falls back to HTTP polling (every 2 s) when WebSocket is unavailable. No cloud dependency.
 - **Config flow** – set up via the Home Assistant UI (Settings → Devices & Services → Add Integration).
 - **Automatic device discovery** – identifies the meter by its serial number and prevents duplicate entries.
 - **18 sensor entities** covering:
@@ -20,16 +20,13 @@ Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zi
 | **Energy returned** (kWh) | Total, Off-peak, Flat-rate |
 | **Device info** | Device type, Device model (serial number and firmware version are shown in the device registry) |
 
-- **Energy Dashboard ready** – energy sensors use `total_increasing` state class, they can be added to the Home Assistant Energy dashboard.
-- **Fast update interval** – data is polled every 2 seconds by default.
+- **Energy Dashboard ready** – energy sensors use `total_increasing` state class, so they can be added to the Home Assistant Energy dashboard out of the box.
+- **Real-time updates** – sensor values are updated instantly via WebSocket push; 2-second HTTP polling is used as a fallback when WebSocket is not available.
 
 ## Requirements
 
-- A **Zinvolt P1-dongle pro** accessible on your local network by Home Assistant.
+- A **Zinvolt P1-dongle Pro** accessible on your local network.
 - **Home Assistant 2024.1** or newer.
-<img src="https://github.com/HAEdwin/homeassistant-zinvolt_p1_meter/blob/main/Zinvolt P1-dongle pro.PNG?raw=true">
-
-
 
 ## Installation
 
@@ -42,7 +39,7 @@ Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zi
    https://github.com/HAEdwin/homeassistant-zinvolt_p1_meter
    ```
    Category: **Integration**
-4. Search for **Zinvolt P1 Meter** in HACS and click **Install**.
+4. Search for **Zinvolt P1-dongle Pro** in HACS and click **Install**.
 5. Restart Home Assistant.
 
 ### Manual
@@ -53,17 +50,19 @@ Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zi
 ## Configuration
 
 1. Go to **Settings → Devices & Services → Add Integration**.
-2. Search for **Zinvolt P1 Meter**.
+2. Search for **Zinvolt P1-dongle Pro**.
 3. Enter the **IP address** of your meter and submit.
 
 The integration will verify connectivity, read the device serial number, and create all sensor entities automatically.
+
+To change the IP address later, open the integration page in **Settings → Devices & Services**, click the **⋮** menu on the entry, and choose **Reconfigure**.
 
 ## Troubleshooting
 
 | Error | Cause / Fix |
 |---|---|
 | *Unable to connect* | Verify the IP address is correct and the meter is powered on and reachable. |
-| *Invalid response* | The device responded but returned unexpected data — make sure it is a Zinvolt P1 Meter. |
+| *Invalid response* | The device responded but returned unexpected data — make sure it is a Zinvolt P1-dongle Pro. |
 | *Already configured* | A meter with the same serial number is already set up. Remove or reconfigure the existing entry first. |
 
 ## License
