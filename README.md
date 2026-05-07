@@ -4,6 +4,9 @@
 
 Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zinvolt P1-dongle Pro**, providing real-time energy monitoring over your local network.
 
+![Zinvolt P1-dongle PRO](https://github.com/HAEdwin/homeassistant-zinvolt_p1_dongle_pro/blob/main/Zinvolt_P1-dongle_pro.png?raw=true)
+
+
 ## Features
 
 - **Local push / polling** – opens a persistent WebSocket connection for real-time push updates when the meter supports it; automatically falls back to HTTP polling (every 2 s) when WebSocket is unavailable. No cloud dependency.
