@@ -25,7 +25,7 @@ Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zi
 
 ## Requirements
 
-- A **Zinvolt P1 Meter** accessible on your local network.
+- A **Zinvolt P1 Dongle Pro** accessible on your local network.
 - **Home Assistant 2024.1** or newer.
 
 ## Installation
