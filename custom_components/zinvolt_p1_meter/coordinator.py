@@ -34,6 +34,7 @@ class ZinvoltP1Coordinator(DataUpdateCoordinator[dict[str, Any]]):
             name=DOMAIN,
             update_interval=DEFAULT_SCAN_INTERVAL,
             config_entry=entry,
+            always_update=False,
         )
 
     async def _async_update_data(self) -> dict[str, Any]:
