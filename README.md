@@ -1,6 +1,8 @@
 # Zinvolt P1 Meter – Home Assistant Integration
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![Validate with Hassfest](https://github.com/HAEdwin/homeassistant-zinvolt_p1_meter/actions/workflows/Validate%20with%20Hassfest.yml/badge.svg)](https://github.com/HAEdwin/homeassistant-zinvolt_p1_meter/actions/workflows/Validate%20with%20Hassfest.yml)
+[![Validate with HACS](https://github.com/HAEdwin/homeassistant-zinvolt_p1_meter/actions/workflows/Validate%20with%20HACS.yml/badge.svg)](https://github.com/HAEdwin/homeassistant-zinvolt_p1_meter/actions/workflows/Validate%20with%20HACS.yml)
 
 Custom [Home Assistant](https://www.home-assistant.io/) integration for the **Zinvolt P1 Dongle Pro**, providing real-time energy monitoring over your local network.
 
